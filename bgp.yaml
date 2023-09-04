@@ -1,0 +1,10 @@
+---
+- name: Configure VYOS lab
+  hosts: all
+  gather_facts: no
+
+  tasks:
+
+  - name: write routing config
+    vyos_config:
+      src: "templates/bgp.j2"
