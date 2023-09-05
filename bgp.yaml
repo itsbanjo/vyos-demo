@@ -5,6 +5,12 @@
 
   tasks:
 
-  - name: write routing config
+  - name: Configure loopback
+    vyos_config: 
+      src: templates/loopback.j2
+
+  - name: Configure BGP 
     vyos_config:
       src: "templates/bgp.j2"
+
+  
