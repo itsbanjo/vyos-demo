@@ -1,4 +1,4 @@
-# vyos-demo
+# Vyos Ansible Demo
 
 Very simple Network Automation for building a BGP network in VYOS using Ansible and Vagrant in VirtualBox environment. This has been tested in a Fedora Core 37 Operating system only. Its likely going to fail the vagrant provisioning because it is explicitly using eno1 when provisioning the public interface. 
 
