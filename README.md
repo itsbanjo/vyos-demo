@@ -1,8 +1,10 @@
 # Vyos Ansible Demo
 
-Very simple Network Automation for building a BGP network in VYOS using Ansible and Vagrant in VirtualBox environment. This has been tested in a Fedora Core 37 Operating system only. Its likely going to fail the vagrant provisioning because it is explicitly using eno1 when provisioning the public interface. 
+Very simple Network Automation for building a BGP network in VYOS using Ansible and Vagrant in VirtualBox environment. This has been tested in a Fedora Core 37 Operating system only. Its likely going to fail the vagrant provisioning using Windows because it is explicitly using eno1 when provisioning the public interface. 
 
-The public_network will be bridge to your existing home network so you can access the SSH directly. Its equuleusly using 192.168.123.0/24 as the default subnet. While the private_network is using 192.168.5.0/30 and 192.168.56.4/30 for point-to-point connectivity. By default, we are ignoring the ssh host key as well in the ansible.cfg to allow you to conveniently recrete the lab and reconnect fault-free connection to ssh.
+The public_network will be bridge to your existing home network so you can access the SSH directly and you can change the management IP of the VYOS accordingly. The default management IP is using 192.168.123.0/24 asubnet. While the private_network is using 192.168.5.0/30 and 192.168.56.4/30 for point-to-point connectivity respectively. 
+
+I've turned off ssh host key verification in ansible.cfg. So, work with caution.
 
 
 
