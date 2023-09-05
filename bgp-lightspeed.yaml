@@ -1,0 +1,43 @@
+---
+- name: Configure VYOS lab
+  hosts: router1
+  gather_facts: no
+
+  tasks:
+  - name: Set loopback interface using vyos_l3_interfaces module 
+    vyos.vyos.vyos_l3_interfaces:
+      config:
+      - name: "{{ item.key }}" 
+        ipv4:
+          - address: "{{ item.value.address }}{{ item.value.mask }}"
+    loop: "{{ lookup('dict', loopback, wantlist=True) }}"
+
+  - name: Set loopback interface name using vyos_interfaces module
+    vyos.vyos.vyos_interfaces:
+      config:
+      - name: "{{ item.key }}" 
+        description: "{{ item.value.alias }}"
+    loop: "{{ lookup('dict', loopback, wantlist=True) }}"
+
+    
+  - name: Set vyos bgp address family
+    vyos.vyos.vyos_bgp_address_family:
+      config:
+        as_number: "{{ item.remote_as }}"
+        address_family:
+          - afi: "ipv4"
+            redistribute:
+              - protocol: "static"
+                metric: 50
+        neighbors:
+          - neighbor_address: "{{ item.address }}"
+            address_family:
+              - afi: "ipv4"
+                attribute_unchanged:
+                  med: True
+    loop: "{{ bgp.neighbor }}"
+
+  - name: Debug
+    debug: 
+      msg: "{{ item.key }} {{ item.value }} "
+    loop: "{{ lookup('dict', bgp, wantlist=True) }}"

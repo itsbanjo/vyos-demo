@@ -1,0 +1,41 @@
+---
+- name: Configure VYOS lab
+  hosts: router1
+  gather_facts: no
+
+  vars: 
+    nested_simple:
+      name: bob
+    nested_root:
+      nested_child:
+        name: charlie
+
+  tasks:
+    - debug: 
+        msg: this would succeed = {{ nested_simple.name }}
+
+    - debug: 
+        msg: this would fail because leaf = {{ nested_simple.dne }}
+      ignore_errors: yes
+
+    - debug: 
+        msg: this would fail because parent = {{ nested_dne.name }}
+      ignore_errors: yes
+    - debug: 
+        msg: (use var value) nested_simple.name = {{ (nested_simple | default({})).name | default('default name') }}
+
+    - debug: 
+        msg: (no var, use default) nested_simple_dne.name = {{ (nested_simple_dne | default({})).name | default('default name') }}
+
+
+
+
+
+
+
+
+
+
+
+
+  

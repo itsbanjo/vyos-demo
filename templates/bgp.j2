@@ -1,16 +1,11 @@
 {% if bgp is defined %}
-set protocols bgp system-as {{ bgp.asn }} 
-set protocols bgp parameters router-id {{ loopback.dum0.address }}
-set protocols bgp address-family ipv4-unicast redistribute connected
-
 {% for item in bgp.neighbor %}
-set protocols bgp neighbor {{ item.address }} ebgp-multihop 2
-set protocols bgp neighbor {{ item.address }} remote-as {{ item.remote_as }}
-set protocols bgp neighbor {{ item.address }} address-family ipv4-unicast
+set protocols bgp {{ bgp.asn }} neighbor {{ item.address }} ebgp-multihop '2'
+set protocols bgp {{ bgp.asn }} neighbor {{ item.address }} remote-as '{{ item.remote_as }}'
+set protocols bgp {{ bgp.asn }} neighbor {{ item.address }} address-family ipv4-unicast
 {% endfor %}
-
 {% for item in bgp.networks %}
-set protocols bgp address-family ipv4-unicast network  '{{ item.network }}{{ item.mask }}'
+set protocols bgp {{ bgp.asn }} address-family ipv4-unicast network '{{ item.network }}{{ item.mask }}'
 {% endfor %}
-
+set protocols bgp {{ bgp.asn }} parameters router-id '{{ loopback.dum0.address }}'
 {% endif %}
