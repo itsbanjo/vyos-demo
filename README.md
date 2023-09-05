@@ -15,6 +15,16 @@ Requirement:
 5. Vagrant vyos plugin 
 6. Git
 
+IP Addresses:
+router1:
+    management ip: 192.168.123.103
+router2:
+    management ip: 192.168.123.104
+router3:
+    management ip: 192.168.123.105
+
+
+
 Instructions:
 
 1. Clone this repo using git.
