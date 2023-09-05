@@ -24,3 +24,5 @@ Instructions:
    
 
 Network Diagram:
+
+![diagram](images/diagram.png)
