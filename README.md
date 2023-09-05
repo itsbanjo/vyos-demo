@@ -18,9 +18,9 @@ Requirement:
 Instructions:
 
 1. Clone this repo using git.
-2. run vagrant plugin install vagrant-vyos
-3. vagrant up
-4. ansible-playbook -i inventory bgp.yaml
+2. run ``` $ vagrant plugin install vagrant-vyos```
+3. run ``` $ vagrant up ```
+4. run ``` $ ansible-playbook -i inventory bgp.yaml ```
    
 
 Network Diagram:
