@@ -35,7 +35,7 @@ Network Diagram:
 2. run ``` $ vagrant plugin install vagrant-vyos```
 3. run ``` $ vagrant up ```
 4. run ``` $ ansible-playbook -i inventory bgp.yaml ```
-5. ssh to one of the VYOS and run ``` sh ip ro ``` to check the routes.
+5. ssh to one of the VYOS and run ``` sh ip ro ``` to check the routes. You will find the BGP routes marked as **B>***
    
 ![diagram](images/vyos_terminal.png)
 
