@@ -10,8 +10,8 @@ loopback:
 bgp:
   asn: 65001
   neighbor:
-    - {address: 192.168.56.2, remote_as: 65000}
+    - {address: 192.168.56.2, remote_as: 65000 }
   networks:
-    - { network: 192.168.56.0, mask: /30}
-    - { network: 10.255.0.1, mask: /32}
+    - { network: 192.168.56.0, mask: /30 }
+    - { network: 10.255.0.1, mask: /32 }
   maxpath: 2
