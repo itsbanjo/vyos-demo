@@ -24,10 +24,12 @@ Requirement:
 | router3 | management | 192.168.123.105 |
 
 
+Network Diagram:
+
+![diagram](images/diagram.png)
 
 
-
-Instructions:
+### Instructions:
 
 1. Clone this repo using git.
 2. run ``` $ vagrant plugin install vagrant-vyos```
@@ -35,7 +37,5 @@ Instructions:
 4. run ``` $ ansible-playbook -i inventory bgp.yaml ```
 5. ssh to one of the VYOS and run ``` sh ip ro ``` to check the routes.
    
+![diagram](images/vyos_terminal.png)
 
-Network Diagram:
-
-![diagram](images/diagram.png)
