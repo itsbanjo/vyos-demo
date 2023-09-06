@@ -14,4 +14,4 @@ bgp:
   networks:
     - { network: 192.168.56.0, mask: /30 }
     - { network: 10.255.0.1, mask: /32 }
-  maxpath: 1
+  maxpath: 2
