@@ -35,26 +35,26 @@ For e.g., changing from 192.168.103.X network to 192.168.1.X
 
 **Vagrantfile:**
 ```
-    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.103.103"
+    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.**123**.103"
 ```
 
 **inventory:**
 ```
         router1.mylab.com:
-          ansible_host: 192.168.123.103
+          ansible_host: 192.168.**123**.103
 ```
 
 
 ### After
 **Vagrantfile:**
 ```
-    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.1.103"
+    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.**1**.103"
 ```
 
 **inventory:**
 ```
         router1.mylab.com:
-          ansible_host: 192.168.123.103
+          ansible_host: 192.168.**1**.103
 ```
 
 
