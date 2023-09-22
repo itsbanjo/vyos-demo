@@ -6,9 +6,9 @@ Explore a simple network automation approach for constructing a BGP network in [
 ![Windows](images/win32.PNG)
 
 
-The public_network functions as a bridge to your existing home network, enabling direct SSH access to reconfigure the management IP of the VYOS accordingly. The default management IP utilizes the 192.168.123.0/24 subnet. Meanwhile, the private_network employs the 192.168.5.0/30 and 192.168.56.4/30 subnets for point-to-point connectivity, respectively.
+The public_network functions as a bridge to your existing home network, enabling direct SSH access to reconfigure the management IP of the VYOS accordingly. The default management IP utilizes the 192.168.123.0/24 subnet. Meanwhile, the private_network employs the 192.168.5.0/30 and 192.168.56.4/30 subnets for point-to-point connectivity, respectively. This demo doesn't change the default password for vyos.
 
-I have disabled SSH host key verification in ansible.cfg, so exercise caution while working with this setup.
+I have disabled SSH host key verification in ansible.cfg, so exercise caution while working with this setup. 
 
 
 ### Requirement:
