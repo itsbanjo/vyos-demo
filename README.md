@@ -1,6 +1,7 @@
 # Vyos Ansible Demo
 
-Explore a simple network automation approach for constructing a BGP network in VYOS using Ansible and Vagrant within a VirtualBox environment. This setup has been successfully tested on Fedora Core 37 and Windows 10 using WSL. When executing ```$ vagrant up``` from Windows, it will likely prompt you to specify the bridge interface, as demonstrated below.
+Explore a simple network automation approach for constructing a BGP network in ![VYOS Equuleus](https://app.vagrantup.com/vyos/boxes/equuleus) using Ansible and Vagrant within a VirtualBox environment. This setup has been successfully tested on Fedora Core 37 and Windows 10 using WSL. When executing ```$ vagrant up``` from Windows, it will likely prompt you to specify the bridge interface, as demonstrated below.
+
 
 ![Windows](images/win32.PNG)
 
