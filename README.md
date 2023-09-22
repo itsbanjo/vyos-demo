@@ -9,7 +9,7 @@ I've turned off ssh host key verification in ansible.cfg. So, work with caution.
 
 Requirement:
 
-1. Ansible (for Windows follow the instructions from this !(link)[https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html]
+1. Ansible (for Windows follow the instructions from this ![link](https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html)
 2. Vagrant
 3. Virtualbox
 4. Vagrant 
