@@ -79,6 +79,6 @@ For e.g., changing from 192.168.103.X network to 192.168.1.X
 1. Add another tasks to apply the same management IP address defined in the inventory file using ansible. (TIP: host_vars, jinja2 templating, or lookup)
 2. Automatically provision a new VYOS router (router4) to build this network:
    ![New network](images/new_network.png)
-3. Extend the tasks to provision a three-tier application in the advertised network 172.21.100.X
-   ![With three tier](images/three-tier.png)
+3. Extend the tasks to provision a [three-tier application](https://github.com/itsbanjo/concession-kiosk-demo) in the advertised network 172.21.100.X
+   
 
