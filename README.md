@@ -25,7 +25,37 @@ I have disabled SSH host key verification in ansible.cfg, so exercise caution wh
 
 
 ### Changing management IP
-if you're planning to change the management IP, you must also change the IP's in the inventory file.  This is the file used by ansible to connect to the VYOS routers using pre-configured IP addresses rather than domain names. 
+If you're planning to change the management IP, you must change the *Vagrantfile* and the *inventory* file respectively.  
+
+For e.g., changing from 192.168.103.X network to 192.168.1.X
+
+
+#### Before:
+
+**Vagrantfile:**
+```
+    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.103.103"
+```
+
+**inventory:**
+```
+        router1.mylab.com:
+          ansible_host: 192.168.123.103
+```
+
+
+#### After
+**Vagrantfile:**
+```
+    router1.vm.network "public_network", bridge: "eno1", ip: "192.168.1.103"
+```
+
+**inventory:**
+```
+        router1.mylab.com:
+          ansible_host: 192.168.123.103
+```
+
 
 
 ### Network Diagram:
