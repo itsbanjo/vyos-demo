@@ -1,20 +1,21 @@
 # Vyos Ansible Demo
 
-Very simple Network Automation for building a BGP network in VYOS using Ansible and Vagrant in VirtualBox environment. This has been tested in a Fedora Core 37 Operating system and Windows 10 using WSL. 
-The public_network is a bridge to your existing home network so you can access the SSH directly so reconfigure the management IP of the VYOS accordingly. The default management IP is using 192.168.123.0/24 subnet. While the private_network is using 192.168.5.0/30 and 192.168.56.4/30 for point-to-point connectivity respectively. 
+Explore a simple network automation approach for constructing a BGP network in VYOS using Ansible and Vagrant within a VirtualBox environment. This setup has been successfully tested on Fedora Core 37 and Windows 10 using WSL. When executing ```$ vagrant up``` from Windows, it will likely prompt you to specify the bridge interface, as demonstrated below.
 
-I've turned off ssh host key verification in ansible.cfg. So, work with caution.
-
+![Windows](images/win32.png)
 
 
-Requirement:
+The public_network functions as a bridge to your existing home network, enabling direct SSH access to reconfigure the management IP of the VYOS accordingly. The default management IP utilizes the 192.168.123.0/24 subnet. Meanwhile, the private_network employs the 192.168.5.0/30 and 192.168.56.4/30 subnets for point-to-point connectivity, respectively.
+
+I have disabled SSH host key verification in ansible.cfg, so exercise caution while working with this setup.
+
+
+### Requirement:
 
 1. Ansible (for Windows follow the instructions from this ![link](https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html))
 2. Vagrant
 3. Virtualbox
-4. Vagrant 
-5. Vagrant vyos plugin 
-6. Git
+4. Git
 
 | Host    | Interface  | IP Address      |
 | ------- | -----------| --------------- |
@@ -23,7 +24,11 @@ Requirement:
 | router3 | management | 192.168.123.105 |
 
 
-Network Diagram:
+### Changing management IP
+if you're planning to change the management IP, you must also change the IP's in the inventory file.  This is the file used by ansible to connect to the VYOS routers using pre-configured IP addresses rather than domain names. 
+
+
+### Network Diagram:
 
 ![diagram](images/diagram.png)
 
