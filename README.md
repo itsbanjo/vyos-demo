@@ -30,7 +30,7 @@ If you're planning to change the management IP, you must change the *Vagrantfile
 For e.g., changing from 192.168.103.X network to 192.168.1.X
 
 
-#### Before:
+### Before:
 
 **Vagrantfile:**
 ```
@@ -44,7 +44,7 @@ For e.g., changing from 192.168.103.X network to 192.168.1.X
 ```
 
 
-#### After
+### After
 **Vagrantfile:**
 ```
     router1.vm.network "public_network", bridge: "eno1", ip: "192.168.1.103"
